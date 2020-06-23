@@ -20,10 +20,11 @@
   <p><a href="account">See Account Information</a></p>
   <p>
     <ul>
-      <% JSON.stringify(data).forEach(function(d) { %>
-        <li><%= d.newsitem.title %></li>
-        <li><%= d.newsitem.contents %></li>
-			<% }) %>
+      <% const bl3news = JSON.parse(data) %>
+      <% bl3news.forEach((news, i) => { %>
+      <li><%= news.newsitem.title %></li>
+      <li><%= news.newsitem.contents %></li>
+      <% }) %>
     </ul>
   </p>
 </body>
