@@ -21,9 +21,9 @@
   <p>
     <ul>
       <% console.log(data) %>
-      <% for (var i = 0; i < data.appnews.newsitems.length; i++) { %>
-        <li><%= data.appnews.newsitems[i].title %></li>
-        <li><%= data.appnews.newsitems[i].contents %></li>
+      <% for (var i = 0; i < data.newsitems.length; i++) { %>
+        <li><%= data.newsitems[i].title %></li>
+        <li><%= data.newsitems[i].contents %></li>
       <% } %>
     </ul>
   </p>
