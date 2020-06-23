@@ -20,9 +20,9 @@
   <p><a href="account">See Account Information</a></p>
   <p>
     <ul>
-      <% data.forEach(d => { %>
-        <li><%= news.newsitem.title %></li>
-        <li><%= news.newsitem.contents %></li>
+      <% data.forEach(function(d) { %>
+        <li><%= d.newsitem.title %></li>
+        <li><%= d.newsitem.contents %></li>
 			<% }) %>
     </ul>
   </p>
