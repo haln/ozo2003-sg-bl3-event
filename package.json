@@ -1,0 +1,23 @@
+{
+  "name": "ozo2003-sg-bl3-event",
+  "description": "Website created for ozo2003's SG Borderlands 3 Event",
+  "version": "0.0.1",
+  "private": true,
+  "license": "",
+  "author": "Casper J. Co",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha --exit test/*.test.js --url localhost:8080/static/main.css"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "ejs": "^3.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.0.0",
+    "supertest": "^4.0.2"
+  }
+}
