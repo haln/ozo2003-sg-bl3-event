@@ -20,6 +20,7 @@
   <p><a href="account">See Account Information</a></p>
   <p>
     <ul>
+      <% console.log(data) %>
       <% for (var i = 0; i < data.length; i++) { %>
         <li><%= data[i].appnews.newsitem.title %></li>
         <li><%= data[i].appnews.newsitem.contents %></li>
