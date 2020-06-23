@@ -73,7 +73,7 @@ app.get('/account', ensureAuthenticated, function(req, res){
 
 app.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/');
+  res.redirect('/index');
 });
 
 // GET /auth/steam
@@ -82,9 +82,9 @@ app.get('/logout', function(req, res){
 //   the user to steamcommunity.com.  After authenticating, Steam will redirect the
 //   user back to this application at /auth/steam/return
 app.get('/auth/steam',
-  passport.authenticate('steam', { failureRedirect: '/' }),
+  passport.authenticate('steam', { failureRedirect: '/index' }),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('/account');
   });
 
 // GET /auth/steam/return
@@ -93,9 +93,9 @@ app.get('/auth/steam',
 //   login page.  Otherwise, the primary route function function will be called,
 //   which, in this example, will redirect the user to the home page.
 app.get('/auth/steam/return',
-  passport.authenticate('steam', { failureRedirect: '/' }),
+  passport.authenticate('steam', { failureRedirect: '/index' }),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('/account');
   });
 
 // Simple route middleware to ensure user is authenticated.
@@ -105,7 +105,7 @@ app.get('/auth/steam/return',
 //   login page.
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) { return next(); }
-  res.redirect('/');
+  res.redirect('/index');
 }
 
 // Start the server
