@@ -1,9 +1,9 @@
 body {
   font-family: Verdana, Helvetica, sans-serif;
   background-image: url("https://images.igdb.com/igdb/image/upload/t_original/ar5cj.png");
-  background-color: #000000
+  background-color: #000000;
 }
 
 ul{
-  background-color: #ffffff
+  background-color: hsla(360, 100%, 90%, 0.3);
 }
