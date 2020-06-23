@@ -26,8 +26,8 @@ passport.deserializeUser(function(obj, done) {
 //   credentials (in this case, an OpenID identifier and profile), and invoke a
 //   callback with a user object.
 passport.use(new SteamStrategy({
-    returnURL: 'https://ozo2003-sg-bl3-event.wm.r.appspot.com:8080/auth/steam/return',
-    realm: 'https://ozo2003-sg-bl3-event.wm.r.appspot.com:8080/',
+    returnURL: 'https://ozo2003-sg-bl3-event.wm.r.appspot.com:8081/auth/steam/return',
+    realm: 'https://ozo2003-sg-bl3-event.wm.r.appspot.com:8081/',
     apiKey: 'FE35401EC1BE5BCA948671A80973B609'
   },
   function(identifier, profile, done) {
