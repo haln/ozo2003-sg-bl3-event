@@ -22,9 +22,8 @@
     <ul>
       <% var bl3news = JSON.parse(data) %>
       <% for (var i = 0; i < bl3news.appnews.newsitems.length; i++) { %>
-        <li><%= bl3news.appnews.newsitems[i].title %></li>
-        <li><%= bl3news.appnews.newsitems[i].contents %></li>
-        <span>
+        <li><b><%= bl3news.appnews.newsitems[i].title %></b></li>
+        <li><%- bl3news.appnews.newsitems[i].contents %></li>
       <% } %>
     </ul>
   </p>
