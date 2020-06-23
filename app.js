@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express')
+    , request = require('request')
     , passport = require('passport')
     , util = require('util')
     , session = require('express-session')
@@ -64,7 +65,13 @@ app.use(express.static(__dirname + '/public'));
 //app.use(express.static('public'));
 
 app.get('/', function(req, res){
-  res.render('index', { user: req.user });
+  request('https://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?appid=397540&count=3&maxlength=300&format=json', function (error, response, body) {
+    console.error('error:', error); // Print the error if one occurred
+    console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+    console.log('body:', body); // Print the returned json
+
+    res.render('index', { user: req.user, data: {body:str} });
+  });
 });
 
 app.get('/account', ensureAuthenticated, function(req, res){

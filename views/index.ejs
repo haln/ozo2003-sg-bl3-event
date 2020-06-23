@@ -14,5 +14,14 @@
 
   <!-- Should redirect to homepage if you're not logged in -->
   <p><a href="account">See Account Information</a></p>
+  <p>
+    <ul>
+      <%= JSON.stringify(data) %>
+      <% data.forEach(function(o) { %>
+      <li><%= o.newsitem.title %></li>
+      <li><%= o.newsitem.contents %></li>
+      <% }); %>
+    </ul>
+  </p>
 </body>
 </html>
