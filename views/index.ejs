@@ -20,7 +20,7 @@
   <p><a href="account">See Account Information</a></p>
   <p>
     <ul>
-      <% data.forEach(function(d) { %>
+      <% JSON.stringify(data).forEach(function(d) { %>
         <li><%= d.newsitem.title %></li>
         <li><%= d.newsitem.contents %></li>
 			<% }) %>
