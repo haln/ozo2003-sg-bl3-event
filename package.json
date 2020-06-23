@@ -16,6 +16,7 @@
     "request": "^2.88.1",
     "ejs": "^3.0.0",
     "@passport-next/passport-openid": "^1.0.0",
+    "passport-steam": "^1.0.14",
     "steam-web": "0.4.0",
     "express-session": "^1.13.0",
     "passport": "^0.3.2",

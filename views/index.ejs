@@ -7,7 +7,11 @@
   <h1>Haln's Website for SG Borderlands 3 event</h1>
   <% if (!user) { %>
   	<h2>Welcome to haln's website! Please log in.</h2>
-  	<p><a href="auth/steam">Sign On with Steam</a></p>
+  	<p>
+      <a href="auth/steam">
+        <img src="https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_01.png" alt="Sign On with Steam"</img>
+      </a>
+    </p>
   <% } else { %>
   	<h2>Hello, <%= user.displayName %>. - <a href='logout'>Logout</a></h2>
   <% } %>
@@ -16,11 +20,13 @@
   <p><a href="account">See Account Information</a></p>
   <p>
     <ul>
-      <%= JSON.stringify(data) %>
-      <% data.forEach(function(o) { %>
+      <%
+        const bl3news = JSON.parse(data)
+        bl3news.forEach((news, o) => {
+      %>
       <li><%= o.newsitem.title %></li>
       <li><%= o.newsitem.contents %></li>
-      <% }); %>
+      <% }) %>
     </ul>
   </p>
 </body>

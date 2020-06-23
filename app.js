@@ -70,7 +70,7 @@ app.get('/', function(req, res){
     console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
     console.log('body:', body); // Print the returned json
 
-    res.render('index', { user: req.user, data: {body:str} });
+    res.render('index', { user: req.user, data: {body:body} });
   });
 });
 
