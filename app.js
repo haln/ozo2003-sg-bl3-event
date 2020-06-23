@@ -26,8 +26,8 @@ passport.deserializeUser(function(obj, done) {
 //   credentials (in this case, an OpenID identifier and profile), and invoke a
 //   callback with a user object.
 passport.use(new SteamStrategy({
-    returnURL: 'https://ozo2003-sg-bl3-event.wm.r.appspot.com:3000/auth/steam/return',
-    realm: 'https://ozo2003-sg-bl3-event.wm.r.appspot.com:3000/',
+    returnURL: 'https://ozo2003-sg-bl3-event.wm.r.appspot.com:8080/auth/steam/return',
+    realm: 'https://ozo2003-sg-bl3-event.wm.r.appspot.com:8080/',
     apiKey: 'FE35401EC1BE5BCA948671A80973B609'
   },
   function(identifier, profile, done) {
@@ -60,7 +60,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Use the built-in express middleware for serving static files from './public'
-app.use('/static', express.static('public'));
+app.use(express.static(__dirname + '/public'));
 //app.use(express.static('public'));
 
 app.get('/', function(req, res){
@@ -73,7 +73,7 @@ app.get('/account', ensureAuthenticated, function(req, res){
 
 app.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/index');
+  res.redirect('/');
 });
 
 // GET /auth/steam
@@ -82,9 +82,9 @@ app.get('/logout', function(req, res){
 //   the user to steamcommunity.com.  After authenticating, Steam will redirect the
 //   user back to this application at /auth/steam/return
 app.get('/auth/steam',
-  passport.authenticate('steam', { failureRedirect: '/index' }),
+  passport.authenticate('steam', { failureRedirect: '/' }),
   function(req, res) {
-    res.redirect('/account');
+    res.redirect('/');
   });
 
 // GET /auth/steam/return
@@ -93,12 +93,10 @@ app.get('/auth/steam',
 //   login page.  Otherwise, the primary route function function will be called,
 //   which, in this example, will redirect the user to the home page.
 app.get('/auth/steam/return',
-  passport.authenticate('steam', { failureRedirect: '/index' }),
+  passport.authenticate('steam', { failureRedirect: '/' }),
   function(req, res) {
-    res.redirect('/account');
+    res.redirect('/');
   });
-
-app.listen(3000);
 
 // Simple route middleware to ensure user is authenticated.
 //   Use this route middleware on any resource that needs to be protected.  If
