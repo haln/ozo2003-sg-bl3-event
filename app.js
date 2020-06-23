@@ -65,10 +65,9 @@ app.use(express.static(__dirname + '/public'));
 //app.use(express.static('public'));
 
 app.get('/', function(req, res){
-  request('https://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?appid=397540&count=3&maxlength=300&format=json', function (error, response, body) {
+  request('https://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?appid=397540&count=5&maxlength=1000&format=json', function (error, response, body) {
     console.error('error:', error); // Print the error if one occurred
     console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-    console.log('body:', body); // Print the returned json
 
     res.render('index', { user: req.user, data: body });
   });

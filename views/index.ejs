@@ -20,11 +20,11 @@
   <p><a href="account">See Account Information</a></p>
   <p>
     <ul>
-      <% console.log(data) %>
       <% var bl3news = JSON.parse(data) %>
       <% for (var i = 0; i < bl3news.appnews.newsitems.length; i++) { %>
         <li><%= bl3news.appnews.newsitems[i].title %></li>
         <li><%= bl3news.appnews.newsitems[i].contents %></li>
+        <span>
       <% } %>
     </ul>
   </p>
