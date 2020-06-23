@@ -22,10 +22,10 @@
     <ul>
       <%
         const bl3news = JSON.parse(data)
-        bl3news.forEach((news, o) => {
+        bl3news.forEach((news, i) => {
       %>
-      <li><%= o.newsitem.title %></li>
-      <li><%= o.newsitem.contents %></li>
+      <li><%- news.newsitem.title %></li>
+      <li><%- news.newsitem.contents %></li>
       <% }) %>
     </ul>
   </p>
