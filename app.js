@@ -4,7 +4,7 @@ const express = require('express')
     , passport = require('passport')
     , util = require('util')
     , session = require('express-session')
-    , SteamStrategy = require('passport-steam/strategy';
+    , SteamStrategy = require('passport-steam/strategy');
 
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
